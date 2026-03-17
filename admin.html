@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - TechFix</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">TechFix</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="admin.html" class="active">Admin</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Admin Dashboard</h1>
+            <p>Manage your computer repair business</p>
+        </div>
+    </header>
+
+    <section class="admin-section">
+        <div class="container">
+            <div class="admin-grid">
+                <div class="admin-card">
+                    <h3>Repair Tickets</h3>
+                    <p class="stat">12</p>
+                    <button class="admin-btn">View Tickets</button>
+                </div>
+                <div class="admin-card">
+                    <h3>Pending Jobs</h3>
+                    <p class="stat">5</p>
+                    <button class="admin-btn">Manage Jobs</button>
+                </div>
+                <div class="admin-card">
+                    <h3>Completed This Month</h3>
+                    <p class="stat">28</p>
+                    <button class="admin-btn">View Report</button>
+                </div>
+                <div class="admin-card">
+                    <h3>Customer Messages</h3>
+                    <p class="stat">8</p>
+                    <button class="admin-btn">Read Messages</button>
+                </div>
+            </div>
+
+            <div class="admin-section-box">
+                <h2>Add New Service</h2>
+                <form class="admin-form" id="serviceForm">
+                    <div class="form-group">
+                        <label for="serviceName">Service Name</label>
+                        <input type="text" id="serviceName" name="serviceName" placeholder="e.g., Laptop Screen Replacement" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="servicePrice">Price ($)</label>
+                        <input type="number" id="servicePrice" name="servicePrice" placeholder="0.00" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="serviceDesc">Description</label>
+                        <textarea id="serviceDesc" name="serviceDesc" rows="3" placeholder="Service details..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Add Service</button>
+                    <p id="serviceMessage" style="margin-top: 10px;"></p>
+                </form>
+            </div>
+
+            <div class="admin-section-box">
+                <h2>Quick Support</h2>
+                <div class="support-links">
+                    <a href="#" class="support-link">📞 Call Support: (555) 123-4567</a>
+                    <a href="#" class="support-link">📧 Email: admin@techfix.com</a>
+                    <a href="#" class="support-link">⚙️ System Settings</a>
+                    <a href="#" class="support-link">📊 Analytics & Reports</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 TechFix. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('serviceForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const messageElement = document.getElementById('serviceMessage');
+            messageElement.textContent = 'Service added successfully!';
+            messageElement.style.color = 'green';
+            this.reset();
+            setTimeout(() => {
+                messageElement.textContent = '';
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
